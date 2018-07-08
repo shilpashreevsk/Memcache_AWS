@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Query Service</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<form id="formcsv" action="/cache" enctype="multipart/form-data" method="post">
+				<p class='cache'></p> Implement memcache<br><input type="submit" value="Submit" id="submit_cache">
+				</form>
+			</td>
+		</tr>	
+		<tr>
+			<td>
+				<form id="formrand" action="/random" enctype="multipart/form-data" method="post">
+				<p class='cache'></p> Implement random query without memcache<br><input type="submit" value="Submit" id="submit_rand">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form id="formquery" action="/get" enctype="multipart/form-data" method="post">
+				<p class='cache'></p> please enter your query:<br><input type="text area" name="text" value="text" id="text_query"><input type="submit" value="Submit" id="submit_rand">
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

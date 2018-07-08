@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect to AWS S3</title>
+</head>
+<body>
+<div class="container">
+    <label><b><u> Shilpa Shree</u></b></label>&nbsp&nbsp&nbsp&nbsp&nbsp	<label><b><u>1001540443</u></b></label>	<br><br>	
+    <label><b>Upload:</b></label>
+    <form id="formUpload" action="/csv_upload" enctype="multipart/form-data" method="post">
+    <p class='description'></p> Please upload your documents here:<br><input type = "file" name="file_upload"><input type="submit" value="Submit" id="submit_file"><br>
+    <br> Count: {{ count }} time: {{ rdstime0 }} </br>
+    </form>
+
+    <label><b>Execute query with SQL with limit on all_week</b></label>
+    <form id="sqlform" action="/sqlexecute" method="POST">
+       Limit: <input type="text" name="limit" value=" ">
+        <br> Time:{{ rdstime1 }}<br>
+        <input type="submit" name="execute" value="execute" ><br><br>
+    </form>
+
+    <label><b>Selection Restriction: Select based on location source for all_week</b></label>
+    <form id="SR" action="/sqlexecuterestrict" method="POST">
+        locationSource <input type="text" name="limit" value=" ">
+	<br> Time:{{ rdstime2 }}<br>
+        <input type="submit" name="execute" value="execute" ><br><br>
+    </form>
+
+    <label><b>Selection Restriction based on long and lat for all_Week</b></label>
+    <form id="SR" action="/sqlexecuterestrictlat" method="POST">
+        Longitude <input type="text" name="long" value=" ">
+        Latitude <input type="text" name="lat" value=" ">
+	<br> Time:{{ rdstime3 }}<br>
+        <input type="submit" name="execute" value="execute" ><br><br>
+    </form>	
+
+    <label><b>Update based on the institute name given from query1 to update state(Education)</b></label>
+    <form id="clean" action="/cleanexecute" method="POST">
+       Input: <input type="text" name="limit">
+       <input type="submit" name="execute" value="execute" ><br><br>
+    </form>
+	  <table border="2px">
+                <tr><td>Institute Details</td></tr>
+                {% for obj in tableData1 %}
+                    <tr><td>{{ obj.STATE }}</td>
+			<td>{{ obj.INSTNM }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+	
+   <label><b>Execute query with Memcached</b></label>
+    <form id="memform" action="/memexecute" method="POST">
+         Limit: <input type="text" name="limit">
+        <br> Time:{{ rdstime4 }}<br>
+        <input type="submit" name="execute" value="execute" ><br><br>
+    </form>
+
+</div>
+</body>
+</body>
+</html>
