@@ -7,14 +7,14 @@ import pymysql
 from werkzeug.utils import secure_filename
 #global file_name
 
-ACCESS_KEY_ID = 'AKIAJSGMTKP4JEI7NJBA'
-ACCESS_SECRET_KEY = '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'
-BUCKET_NAME = 'shilpashree-s3'
+ACCESS_KEY_ID = ''
+ACCESS_SECRET_KEY = ''
+BUCKET_NAME = 's3'
 
-hostname = 'picturealbumdb.cckoj3pyomxt.us-east-2.rds.amazonaws.com'
-username = 'shilpa'
-password = 'admin123'
-database = 'PictureAlbumDB'
+hostname = ''
+username = ''
+password = ''
+database = ''
 myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database, autocommit = True, cursorclass=pymysql.cursors.DictCursor, local_infile=True)
 
 print "Database Connected"
@@ -25,7 +25,7 @@ app.secret_key = 'pass'
 
 def memcache_connect():#Connecting to the memcache
 	# mc = memcache.Client(['url-memcache'], debug = 1)
-	mc = memcache.Client(['shilpa.9qqgg1.cfg.use2.cache.amazonaws.com:11211'], debug = 1)
+	mc = memcache.Client(['], debug = 1)
 	print "Memcache connected"
 	return mc
 
